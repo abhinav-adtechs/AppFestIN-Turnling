@@ -43,7 +43,9 @@ public class GoogleSignInActivity extends AppCompatActivity implements GoogleApi
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+
+        FirebaseAuth.getInstance().signOut();
+
     }
 
     @Override
@@ -77,15 +79,18 @@ public class GoogleSignInActivity extends AppCompatActivity implements GoogleApi
 
 
     private void updateUI(FirebaseUser currentUser) {
-        Log.e("message", currentUser.getUid());
-        Intent intent = new Intent(this, HomeActivity.class);
+        Log.i("TAG", "updateUI: ");
 
-        assert currentUser != null:
-            intent.putExtra("userId", currentUser.getUid());
-        startActivity(intent);
+        if (currentUser != null){
+            Intent intent = new Intent(this, HomeActivity.class) ;
+            intent.putExtra("userId", currentUser.getUid()) ;
+            startActivity(intent);
+        }
+
     }
 
     private void signIn() {
+        Log.i("TAG", "signIn: ");
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
@@ -100,6 +105,7 @@ public class GoogleSignInActivity extends AppCompatActivity implements GoogleApi
             if (result.isSuccess()) {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
+                Log.i("TAG", "onActivityResult: ");
                 firebaseAuthWithGoogle(account);
             } else {
                 // Google Sign In failed, update UI appropriately

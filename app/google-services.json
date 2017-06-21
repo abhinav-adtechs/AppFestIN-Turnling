@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "258282060964-t78u1eu2mv2ines91erkhmsrlb3ga0sl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.winuall.turnling",
+            "certificate_hash": "6533e693a01b617d0cd4d3bb78f4954638df5ee7"
+          }
+        },
+        {
           "client_id": "258282060964-bfv5no2l1seam845f3h0r59m3kvcka5q.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
