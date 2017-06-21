@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "258282060964",
+    "firebase_url": "https://turnling-appfestin.firebaseio.com",
+    "project_id": "turnling-appfestin",
+    "storage_bucket": "turnling-appfestin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258282060964:android:d951499112802502",
+        "android_client_info": {
+          "package_name": "com.winuall.turnling"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258282060964-bfv5no2l1seam845f3h0r59m3kvcka5q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.winuall.turnling",
+            "certificate_hash": "32a6ed0cc3169e1dff0b50732b34e23c68848e8a"
+          }
+        },
+        {
+          "client_id": "258282060964-7565jnmaqrn4if7m8pbs17n2moigicvm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLbKPVVLUlIJYyV49ohp2z3I8-TuGapAE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258282060964-7565jnmaqrn4if7m8pbs17n2moigicvm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
