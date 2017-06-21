@@ -45,7 +45,7 @@ public class  HomeActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         initDrawerView();
-        putInstituteFragment();
+        initChatFragment();
     }
 
     @Override
@@ -97,14 +97,14 @@ public class  HomeActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(drawerToggle);
     }
 
-    private void putInstituteFragment(){
-        Fragment chatFragment = new ChatFragment() ;
+    private void initChatFragment(){
+        ChatFragment chatFragment = new ChatFragment() ;
 
         android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.activity_home_content_frame, chatFragment)
                 .commit();
-        drawerList.setItemChecked(1, true);
+        //drawerList.setItemChecked(1, true);
     }
 
     private void selectItem(int position) {

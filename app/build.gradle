@@ -27,7 +27,6 @@ dependencies {
     })
 
     /*Android Support Libraries*/
-    
 
     /*Architecture Needs*/
     compile 'com.google.firebase:firebase-auth:10.0.1'
