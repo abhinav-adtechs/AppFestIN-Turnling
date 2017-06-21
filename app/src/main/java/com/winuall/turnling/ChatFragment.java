@@ -57,6 +57,9 @@ public class ChatFragment extends Fragment {
             isUser.add(true);
         }
 
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this.getActivity().getApplicationContext(),
+                LinearLayoutManager.VERTICAL, false) ;
+        chatRecyclerView.setLayoutManager(layoutManager);
         rvChatAdapter = new RvChatAdapter(chatContent, timestamp, imageIds, isUser, getContext());
         chatRecyclerView.setAdapter(rvChatAdapter);
     }
