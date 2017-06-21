@@ -44,8 +44,6 @@ public class GoogleSignInActivity extends AppCompatActivity implements GoogleApi
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
-        FirebaseAuth.getInstance().signOut();
-
     }
 
     @Override
@@ -56,6 +54,8 @@ public class GoogleSignInActivity extends AppCompatActivity implements GoogleApi
 
         ButterKnife.bind(this) ;
 
+
+        FirebaseAuth.getInstance().signOut();
         mAuth = FirebaseAuth.getInstance();
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
