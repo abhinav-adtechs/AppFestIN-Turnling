@@ -89,17 +89,19 @@ public class  HomeActivity extends AppCompatActivity {
     }
 
     private void initChatFragment(){
-        ChatFragment chatFragment = new ChatFragment() ;
 
         String userId = null;
 
         if (getIntent().hasExtra("userID"))
             userId = getIntent().getStringExtra("userId") ;
 
-        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-
         Bundle bundle = new Bundle() ;
         bundle.putString("userId", userId);
+        ChatFragment chatFragment = new ChatFragment() ;
+        chatFragment.setArguments(bundle);
+
+        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+
         fragmentManager.beginTransaction()
                 .replace(R.id.activity_home_content_frame, chatFragment)
                 .commit();

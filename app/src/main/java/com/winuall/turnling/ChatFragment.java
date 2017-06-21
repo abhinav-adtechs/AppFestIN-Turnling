@@ -32,6 +32,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,6 +44,8 @@ public class ChatFragment extends Fragment {
     DatabaseReference databaseReference ;
 
     private String languagePref ;
+
+    private String selfUserId ;
 
     @BindView(R.id.fragment_chat_rv)
     RecyclerView chatRecyclerView;
@@ -58,6 +61,10 @@ public class ChatFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chat, container, false) ;
         ButterKnife.bind(this, view) ;
+
+        selfUserId = getArguments().getString("userId") ;
+        Log.i("TAG", "onCreateView: " + selfUserId);
+
 
         database = FirebaseDatabase.getInstance() ;
         database.setPersistenceEnabled(true);
@@ -77,14 +84,20 @@ public class ChatFragment extends Fragment {
 
 
                 for (DataSnapshot messageSnapshot: dataSnapshot.getChildren()) {
-                    String name = (String) messageSnapshot.child("target_id").getValue();
+                    String name = (String) messageSnapshot.child("user_id").getValue();
                     String message = (String) messageSnapshot.child("text").getValue();
                     Log.i("TAG", "onDataChange: " + name + " " + message);
 
                     chatContent.add(message);
                     timestamp.add("");
                     imageIds.add(1);
-                    isUser.add(false);
+
+
+                    Log.i("TAG", "onDataChange: " + selfUserId + " " + name);
+                    if (Objects.equals(selfUserId, name))
+                        isUser.add(true);
+                    else
+                        isUser.add(false);
 
 
                 }
