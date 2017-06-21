@@ -3,9 +3,12 @@ package com.winuall.turnling;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.icu.util.Calendar;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSnapHelper;
@@ -17,6 +20,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,6 +55,9 @@ public class ChatFragment extends Fragment {
     @BindView(R.id.fragment_chat_rv)
     RecyclerView chatRecyclerView;
 
+    @BindView(R.id.editText_name)
+    EditText etMessage ;
+
     private RvChatAdapter rvChatAdapter;
     private ArrayList<String> chatContent;
     private ArrayList<String> timestamp;
@@ -71,8 +79,9 @@ public class ChatFragment extends Fragment {
 
         initChat();
 
-        databaseReference = database.getReference("messages/en") ;
+        databaseReference = database.getReference("messages/es") ;
         databaseReference.addValueEventListener(new ValueEventListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Log.i("TAG", "onDataChange: " + dataSnapshot.toString());
@@ -89,6 +98,10 @@ public class ChatFragment extends Fragment {
                     Log.i("TAG", "onDataChange: " + name + " " + message);
 
                     chatContent.add(message);
+
+
+                    /*DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                    Calendar cal = Calendar.getInstance();*/
                     timestamp.add("");
                     imageIds.add(1);
 
@@ -103,7 +116,7 @@ public class ChatFragment extends Fragment {
                 }
 
                 rvChatAdapter.notifyDataSetChanged();
-
+                chatRecyclerView.smoothScrollToPosition(timestamp.size());
 
 
                 /*try {
@@ -147,7 +160,12 @@ public class ChatFragment extends Fragment {
 
     @OnClick(R.id.fragment_chat_button)
     public void onMessageSent(View v) {
+        Log.i("TAG", "onMessageSent: " + (etMessage.getText()));
 
+        MessageFormat messageFormat = new MessageFormat(etMessage.getText().toString(), "4na8O25FilMmQe7Mbvje79XsS802", "uqNGXcgnKTPiZa7XuTBX8ZuKz2u1") ;
+
+        databaseReference.push().setValue(messageFormat) ;
+        etMessage.setText("");
     }
 
     @Override
