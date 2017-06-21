@@ -77,7 +77,6 @@ public class GoogleSignInActivity extends AppCompatActivity implements GoogleApi
 
 
     private void updateUI(FirebaseUser currentUser) {
-        Log.e("message", currentUser.getUid());
         Intent intent = new Intent(this, HomeActivity.class);
 
         assert currentUser != null:

@@ -1,14 +1,11 @@
 package com.winuall.turnling;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,10 +13,8 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
 
 public class  HomeActivity extends AppCompatActivity {
     @BindView(R.id.activity_home_drawer_layout)
@@ -61,12 +56,6 @@ public class  HomeActivity extends AppCompatActivity {
 
     private void initDrawerView() {
         LayoutInflater inflater = getLayoutInflater();
-        /*View listHeaderView = inflater.inflate(R.layout.activity_home_view_drawer_header,drawerList, false);
-        drawerList.addHeaderView(listHeaderView);
-        listHeaderView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {}
-        });*/
 
         ArrayList<HomeDrawerItem> itemList = new ArrayList<>();
         /*itemList.add(new HomeViewDrawerItem("Institute", R.drawable.ic_institute));

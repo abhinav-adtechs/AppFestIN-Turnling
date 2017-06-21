@@ -64,6 +64,11 @@ public class ChatFragment extends Fragment {
         chatRecyclerView.setAdapter(rvChatAdapter);
     }
 
+    @OnClick(R.id.fragment_chat_button)
+    public void onMessageSent(View v) {
+
+    }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
