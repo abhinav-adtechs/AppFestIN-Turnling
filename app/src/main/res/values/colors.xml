@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorTextSecondary">#a4e5fb</color>
+    <color name="colorBlueNavigationMenuItem">#2daad8</color>
+    <color name="colorDarkBlueButton">#279bcc</color>
+    <color name="colorPrimary">#ffa84f</color>
+    <color name="colorBlueTestItem">#992da8d5</color>
+    <color name="colorPrimaryDark">#e87930</color>
+    <color name="colorGreyBottomSheet">#e4333333</color>
+    <color name="colorBlueTextError">#085a79</color>
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorAccent">#dcdcdc</color>
+    <color name="colorBackgroundGrey">#e7e7e7</color>
+    <color name="colorGreyBrighter">#f9f9f9</color>
+    <color name="colorGrey">#e7e7e7</color>
+    <color name="colorGreyProgressBackground">#dedddf</color>
+    <color name="colorGreyShaded">#d8d8d8</color>
+    <color name="colorGreyShade">#9b9b9b</color>
+    <color name="colorGreyFade">#979797</color>
+    <color name="colorBlackFadedBackground">#4a4a4a</color>
+    <color name="colorBlackShadeDark">#39393a</color>
+    <color name="colorGreyGif">#1a1a1a</color>
+    <color name="colorBlack">#000000</color>
+
+    <color name="colorBlueBottomSheet">#487f98</color>
+    <color name="colorRedBottomSheet">#a6464e</color>
+    <color name="colorGreenBottomSheet">#729740</color>
+    <color name="colorBlueBottomSheetDark">#3c697d</color>
+    <color name="colorRedBottomSheetDark">#903d44</color>
+    <color name="colorGreenBottomSheetDark">#5f7e35</color>
+
+    <color name="colorRedProgressBar">#ff735d</color>
+    <color name="colorBlueProgressBar">#6467e7</color>
+    <color name="colorYellowProgressBar">#f6be61</color>
+
+    <color name="colorRedTestDark">#d75440</color>
+    <color name="colorRedTestItem">#99fb3a52</color>
+
+    <color name="colorGreenCorrect">#a0ef49</color>
+    <color name="colorGreenHomework">#86c83d</color>
+    <color name="colorGreenHomeworkDark">#6e9641</color>
+    <color name="colorGreenTestItem">#997ed321</color>
+
+    <color name="colorBlackProgressBar">#dcdcdc</color>
+    <color name="colorBlackDivider">#ececec</color>
+    <color name="colorBackground">#038ec1</color>
 </resources>
