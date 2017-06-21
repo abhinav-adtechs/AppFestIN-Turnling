@@ -36,7 +36,7 @@ public class RvChatAdapter extends RecyclerView.Adapter<RvChatAdapter.ChatViewHo
     public void onBindViewHolder(ChatViewHolder holder, int position) {
         holder.message.setText(chatContent.get(position));
         holder.timestamp.setText(timestamp.get(position));
-        holder.profileImage.setImageResource(imageIds.get(position));
+//        holder.profileImage.setImageResource(imageIds.get(position));
 
         if(isUser.get(position)) {
 
