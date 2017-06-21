@@ -50,7 +50,7 @@ public class ChatFragment extends Fragment {
         timestamp = new ArrayList<>();
         imageIds = new ArrayList<>();
         isUser = new ArrayList<>();
-        for(int i = 0; i < 5; i++) {
+        for(int i = 0; i < 3; i++) {
             chatContent.add("J'habite au Paris et je suis développeur, et toi ?");
             timestamp.add("02:28");
             imageIds.add(R.drawable.profile);

@@ -1,8 +1,6 @@
 package com.winuall.turnling;
 
 import android.content.Context;
-import android.content.Intent;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -41,8 +39,6 @@ public class RvChatAdapter extends RecyclerView.Adapter<RvChatAdapter.ChatViewHo
         holder.profileImage.setImageResource(imageIds.get(position));
 
         if(isUser.get(position)) {
-
-        } else {
 
         }
     }

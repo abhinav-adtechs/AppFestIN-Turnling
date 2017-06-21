@@ -2,17 +2,17 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <android.support.v7.widget.CardView
         android:id="@+id/item_home_view_chat_card"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/item_home_view_chat_profile_image"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -28,20 +28,19 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginBottom="0dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:src="@drawable/profile"
         app:layout_constraintBottom_toBottomOf="@+id/item_home_view_chat_card"
-        app:layout_constraintLeft_toRightOf="@+id/item_home_view_chat_card"
-        tools:layout_editor_absoluteX="278dp" />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
         android:id="@+id/item_home_view_timestamp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="4dp"
         android:text="2:07"
         android:textSize="10sp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/item_home_view_chat_card"
         app:layout_constraintTop_toBottomOf="@+id/item_home_view_chat_card" />
 </android.support.constraint.ConstraintLayout>
